@@ -9,9 +9,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/jpablolima/tars-bikecraft.git
+    repoURL: https://github.com/jpablolima/k8s.git
     targetRevision: HEAD
-    path: k8s 
+    path: homolog 
   destination:
     server: https://kubernetes.default.svc
     namespace: mayapp-tarsbike-homolog
@@ -26,28 +26,28 @@ spec:
 
 
 
+---
 # TarsBikeCraft Produção
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-tarsbike-prod
+  namespace:  argocd
+spec:
+  project: default
 
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: myapp-tarsbike-prod
-#   namespace:  argocd
-# spec:
-#   project: default
+  source: 
+    repoURL: https://github.com/jpablolima/k8s.git
+    targetRevision: HEAD
+    path: prod 
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp-tarsbike-prod
 
-#   source: 
-#     repoURL: https://github.com/jpablolima/tars-bikecraft.git
-#     targetRevision: HEAD
-#     path: prod 
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: myapp-tarsbike-prod
-
-#   syncPolicy:
-#     syncOptions:
-#       - CreateNamespace=true 
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true 
   
-#     automated:
-#       selfHeal: true
-#       prune: true
+    automated:
+      selfHeal: true
+      prune: true

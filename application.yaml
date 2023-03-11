@@ -1,0 +1,53 @@
+# TarsBikeCraft Homologação
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mayapp-tarsbike-homolog
+  namespace: argocd
+spec: 
+  project: default
+
+  source:
+    repoURL: https://github.com/jpablolima/tars-bikecraft.git
+    targetRevision: HEAD
+    path: homolog 
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mayapp-tarsbike-homolog
+  
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    
+    automated:
+      selfHeal: true
+      prune: true
+
+
+---
+# TarsBikeCraft Produção
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-tarsbike-prod
+  namespace:  argocd
+spec:
+  project: default
+
+  source: 
+    repoURL: https://github.com/jpablolima/tars-bikecraft.git
+    targetRevision: HEAD
+    path: prod 
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp-tarsbike-prod
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true 
+  
+    automated:
+      selfHeal: true
+      prune: true

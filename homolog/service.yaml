@@ -4,7 +4,7 @@ metadata:
   name: tarsbikecraft-service-homolog
 spec:
   selector:
-    app: arsbike-craft-homolog
+    app: tarsbike-craft-homolog
   ports:
     - protocol: 'TCP'
       port: 80

@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/jpablolima/tars-bikecraft.git
     targetRevision: HEAD
-    path: homolog 
+    path: k8s 
   destination:
     server: https://kubernetes.default.svc
     namespace: mayapp-tarsbike-homolog

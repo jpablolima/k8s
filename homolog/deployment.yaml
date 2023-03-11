@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tarsbikecraft-deployment-homolog
+
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: tarsbike-craft-homolog
+  template:
+    metadata:
+      labels:
+        app: tarsbike-craft-homolog
+    spec:
+      containers:
+        - name: tarsbike-craft-homolog
+          image: jpablolima/apache2tarsbikecraft:latest
+          ports: 
+            - containerPort: 80

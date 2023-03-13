@@ -1,10 +1,10 @@
 apiVersion: v1 
 kind: Service 
 metadata:
-  name: nodejs-service
+  name: tarsbikecraft-service-homolog 
 spec:
   selector:
-    app: nodejs-craft-homolog
+    app: tarsbikecraft-service-homolog 
   ports:
     - protocol: 'TCP'
       port: 80

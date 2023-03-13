@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/jpablolima/tars-bikecraft.git
+    repoURL:  https://github.com/jpablolima/k8s.git
     targetRevision: HEAD
     path: homolog 
   destination:

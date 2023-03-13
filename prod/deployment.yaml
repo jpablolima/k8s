@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-tarsbike-prod
+  name: myapp-tarsbike-deployment-prod
 
 spec:
   replicas: 4

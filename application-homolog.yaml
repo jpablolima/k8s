@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-tarsbike-homolog
+  name: mayapp-tarsbike-homolog
   namespace: argocd
 spec: 
   project: default
 
   source:
-    repoURL: https://github.com/jpablolima/k8s.git
+    repoURL: https://github.com/jpablolima/tars-bikecraft.git
     targetRevision: HEAD
     path: homolog 
   destination:
     server: https://kubernetes.default.svc
-    namespace: myapp-tarsbike-homolog
+    namespace: mayapp-tarsbike-homolog
   
   syncPolicy:
     syncOptions:
@@ -21,6 +21,3 @@ spec:
     automated:
       selfHeal: true
       prune: true
-
-
-

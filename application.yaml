@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/jpablolima/k8s.git
     targetRevision: HEAD
-    path: k8s
+    path: homolog
   destination:
     server: https://kubernetes.default.svc
     namespace: mayapp-tarsbike-homolog

@@ -1,10 +1,10 @@
 apiVersion: v1 
 kind: Service 
 metadata:
-  name: tarsbikecraft-service-homolog
+  name: tarsbikecraft-service-prod
 spec:
   selector:
-    app: tarsbike-craft-homolog
+    app: tarsbike-craft-prod
   ports:
     - protocol: 'TCP'
       port: 80

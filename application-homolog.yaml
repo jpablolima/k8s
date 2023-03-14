@@ -13,7 +13,7 @@ spec:
     path: homolog
   destination:
     server: https://kubernetes.default.svc
-    namespace: mayapp-tarsbike
+    namespace: mayapp-tarsbike-homolog
   
   syncPolicy:
     syncOptions:

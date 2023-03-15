@@ -1,0 +1,39 @@
+name: Create Pull Request 
+
+on: 
+  push:
+    branches:
+      - "develop"
+jobs:
+    CreatePullRequest:
+      strategy:
+        fail-fast: true
+        matrix:
+          runner: [ ubuntu-latest ]
+      runs-on: ${{ matrix.runner  }}
+
+      steps:
+        - name: Checkout repo 
+          uses: actions/checkout@v3
+
+        - name: Create Pull Request
+          id: open-pr
+          uses: repo-sync/pull-request@v2
+          with:
+            pr_title: "Merge branch 'develop' into main"
+            destination_branch: main 
+            pr_body: |
+              :crown: *Update and automated PR*
+            github_token: ${{ secrets.GIT_TOKEN }}
+
+        - name: Output url
+          run: echo ${{ steps.open-pr.outputs.pr_url  }}
+
+        - name: Output Number
+          run: echo ${{ steps.open-pr.outputs.pr_number  }}
+
+        - name: Output Created
+          run: echo ${{ steps.open-pr.outputs.pr_created  }}
+        
+        - name: Output Has Changed files
+          run: echo ${{ steps.open-pr.outputs.pr_url  }}

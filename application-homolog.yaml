@@ -8,9 +8,9 @@ spec:
   project: default
 
   source:
-    repoURL:  https://github.com/jpablolima/k8s.git
+    repoURL: https://github.com/jpablolima/k8s.git
     targetRevision: HEAD
-    path: homolog 
+    path: homolog
   destination:
     server: https://kubernetes.default.svc
     namespace: mayapp-tarsbike-homolog

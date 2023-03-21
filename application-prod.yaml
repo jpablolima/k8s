@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mayapp-tarsbike-prod
+  name: myapp-tarsbike-prod
   namespace: argocd
 spec: 
   project: default
@@ -13,7 +13,7 @@ spec:
     path: prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: mayapp-tarsbike-prod
+    namespace: myapp-tarsbike-prod
   
   syncPolicy:
     syncOptions:

@@ -4,7 +4,7 @@ metadata:
   name: tarsbikecraft-deployment-prod
 
 spec:
-  replicas: 6
+  replicas: 3
   selector:
     matchLabels:
       app: tarsbike-craft-prod

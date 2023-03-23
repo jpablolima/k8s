@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: tarsbike-craft-homolog
-          image: jpablolima/apache2tarsbikecraft:latest
+          image: jpablolima/apache2tarsbikecraft:1.2.0
           ports: 
             - containerPort: 80
